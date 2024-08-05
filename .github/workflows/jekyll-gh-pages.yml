@@ -39,13 +39,17 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Remove all files except dist
+        run: |
+          find . -mindepth 1 -maxdepth 1 ! -name 'dist' -exec rm -rf {} +
+      - name: Move dist contents to root
+        run: mv dist/* .
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload dist folder
-          path: './dist'
+          path: './'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
