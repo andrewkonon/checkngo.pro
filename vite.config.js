@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import { globSync } from 'glob';
 
 export default defineConfig({
-  base: 'https://dvaranir.github.io/checkngo.pro/',
   build: {
     rollupOptions: {
       input: {

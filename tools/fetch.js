@@ -3,7 +3,7 @@ export default class HTTP {
 		const request_data = {
 			method: method,
 			headers: {
-				"Content-Type": "application/json",
+				
 				'Authorization': `Basic ${btoa('tipsspain:checkngo1980')}`
 			},
 		};

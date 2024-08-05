@@ -33,19 +33,21 @@ function init_send_proposal_button() {
 	const send_proposal_button = document.getElementById("send_proposal_button");
 
 	send_proposal_button?.addEventListener("click", () => {
-		const name = document.getElementById("proposal_name")?.value || "";
-		const restaurant =
-			document.getElementById("proposal_restaurant")?.value || "";
-		const phone = document.getElementById("proposal_phone")?.value || "";
-		const email = document.getElementById("proposal_email")?.value || "";
-		const password = document.getElementById("proposal_password")?.value || "";
+
+		const inputs = {
+			name: document.getElementById("proposal_name"),
+			restaurant: document.getElementById("proposal_restaurant"),
+			phone: document.getElementById("proposal_phone"),
+			email: document.getElementById("proposal_email"),
+			password: document.getElementById("proposal_password")
+		}
 
 		const body = {
-			name,
-			restaurant,
-			phone,
-			email,
-			password,
+			name: inputs.name.value,
+			restaurant: inputs.restaurant.value,
+			phone: inputs.phone.value,
+			email: inputs.email.value,
+			password: inputs.password.value
 		};
 
 		const url = HTTP.build_url(
@@ -54,7 +56,11 @@ function init_send_proposal_button() {
 		);
 
 		HTTP.send(url, "GET", null, (response) => {
-			console.log(response);
+			if(response.success){
+				
+				alert("Your request has been sent. Thank you for contacting us!");
+				Object.values(inputs).forEach(input => input.value = "");
+			}
 		});
 	});
 }
