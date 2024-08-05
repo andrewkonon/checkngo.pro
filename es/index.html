@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/vite.svg" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicon-32x32.png" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicon-16x16.png" />
+		<link
+			rel="manifest"
+			href="/site.webmanifest" />
+		<meta
+			name="msapplication-TileColor"
+			content="#da532c" />
+		<meta
+			name="theme-color"
+			content="#ffffff" />
+		<title>ChecknGo</title>
+	</head>
+	<body>
+		<header
+			id="header"
+			class="flex items-center justify-between px-[31px] py-[17px] gap-[24px] sticky top-0 bg-[#fff] max-lsm:grid grid-cols-2 max-lsm:px-[15px] max-lsm:max-h-[104px] height-animation z-10">
+			<img
+				class="w-[70px]"
+				src="/images/logo.webp"
+				alt="ChecknGo Logo" />
+			<div
+				id="burger-menu"
+				class="lsm:hidden">
+				<span></span>
+			</div>
+			<nav
+				class="flex gap-[40px] text-blue overflow-hidden max-lsm:col-span-2 max-lsm:flex-col max-lsm:gap-[16px]">
+				<a
+					class="text-[14px]"
+					href="/es/"
+					>ESP</a
+				>
+				<a
+					class="text-[14px]"
+					href="/"
+					>ENG</a
+				>
+			</nav>
+		</header>
+		<section
+			class="py-[200px] flex flex-col justify-center items-center bg-[url('/images/introduction-background.webp')] bg-center bg-cover max-lsm:px-[30px]">
+			<div
+				class="flex flex-col gap-[36px] max-lg:max-w-[840px] max-md:max-w-[670px] max-lsm:max-w-[480px]">
+				<h1
+					class="text-[52px] text-[#fff] max-w-[1020px] leading-tight max-lsm:text-[28px]">
+					Check & Go. Disfrute de una experiencia gastronómica perfecta.
+				</h1>
+				<button
+					id="learn_more_button"
+					class="bg-[#000] text-[#fff] hover:bg-[#fff] hover:text-[#000] px-[40px] py-[12px] max-w-fit transition-all duration-300">
+					Saber más
+				</button>
+			</div>
+		</section>
+		<section
+			id="qr_section"
+			data-aos="zoom-in-up"
+			class="bg-medium_gray">
+			<div
+				class="flex gap-[60px] py-[40px] justify-center items-center max-w-[1080px] mx-auto max-lsm:flex-col max-lsm:gap-[24px] max-lsm:px-[30px]">
+				<img
+					class="w-full max-w-[390px] max-lg:max-w-[315px] max-md:max-w-[240px] max-lsm:max-w-[480px]"
+					src="/images/work-example.webp" />
+				<div
+					class="max-w-[570px] max-lg:max-w-[470px] max-md:max-w-[360px] max-lsm:max-w-[480px]">
+					<h2 class="text-[48px] leading-tight mb-[8px] max-lsm:text-[24px]">
+						Solución de pago con código QR
+					</h2>
+					<p>
+						Simplifique los pagos en restaurantes y la exploración de la carta
+						con nuestro código QR. Los clientes de restaurantes pagan las
+						cuentas, miran la carta, hacen pedidos y dejan propinas, todo con un
+						simple acción de escanear.
+					</p>
+				</div>
+			</div>
+		</section>
+		<section
+			data-aos="zoom-in-up"
+			class="bg-light_gray flex gap-[60px] py-[40px] justify-center items-center max-lsm:flex-col-reverse max-lsm:gap-[24px] max-lsm:px-[30px]">
+			<div
+				class="max-w-[570px] max-lg:max-w-[470px] max-md:max-w-[360px] max-lsm:max-w-[480px]">
+				<h2 class="text-[48px] leading-tight mb-[8px] max-lsm:text-[24px]">
+					Menú en línea
+				</h2>
+				<p>
+					Los clientes de restraurant obtienen un acceso instantáneo a la
+					versión digital de la carta adaptada para el uso con dispositivos
+					móviles. Los clientes exploran los platos e ingredientes del
+					restaurante y hacen una elección informada de forma rapida y
+					ecológica. El cliente ya no tiene que esperar a que le lleven la
+					versión impresa de la carta. Se acabó la prisa de llevar y recoger las
+					cartas por parte del camarero.
+				</p>
+			</div>
+			<img
+				class="w-full max-w-[390px] max-lg:max-w-[315px] max-md:max-w-[240px] max-lsm:max-w-[480px]"
+				src="/images/menu-in-mobile.webp" />
+		</section>
+		<section
+			data-aos="zoom-in-up"
+			class="flex gap-[60px] py-[40px] justify-center items-center max-lsm:flex-col max-lsm:gap-[24px] max-lsm:px-[30px]">
+			<img
+				class="w-full max-w-[390px] max-lg:max-w-[315px] max-md:max-w-[240px] max-lsm:max-w-[480px]"
+				src="/images/tips-in-can.webp" />
+			<div
+				class="max-w-[570px] max-lg:max-w-[470px] max-md:max-w-[360px] max-lsm:max-w-[480px]">
+				<h2 class="text-[48px] leading-tight mb-[8px] max-lsm:text-[24px]">
+					Aumente sus propinas
+				</h2>
+				<p>
+					Nuestro sistema mejora la experiencia de las propinas haciéndola
+					fácil, cómoda y excepcional tanto para los clientes como para el
+					personal. Un estudio demuestra que la digitalización de las propinas
+					resulta en un aumento de los ingresos de los camareros, garantizando
+					que reciban la recompensa que merecen por su excelente servicio.
+				</p>
+			</div>
+		</section>
+		<section
+			data-aos="zoom-in-up"
+			class="bg-light_blue flex gap-[60px] py-[40px] justify-center items-center max-lsm:flex-col-reverse max-lsm:gap-[24px] max-lsm:px-[30px]">
+			<div
+				class="max-w-[570px] max-lg:max-w-[470px] max-md:max-w-[360px] max-lsm:max-w-[480px]">
+				<h2 class="text-[48px] leading-tight mb-[8px] max-lsm:text-[24px]">
+					Programa de fidelidad
+				</h2>
+				<p>
+					Los clientes de los restaurantes disfrutan de recompensas exclusivas
+					como estimados usuarios de nuestro programa de fidelidad. Acumulan
+					puntos con cada visita y los utilizan en cualquier restaurante
+					conectado, aumentando así la asistencia de los restaurantes de nuestro
+					programa de fidelidad.
+				</p>
+			</div>
+			<img
+				class="w-full max-w-[390px] max-lg:max-w-[315px] max-md:max-w-[240px] max-lsm:max-w-[480px]"
+				src="/images/people-eating.webp" />
+		</section>
+		<section
+			data-aos="fade-up"
+			class="bg-light_gray flex flex-col items-center py-[30px]">
+			<h2
+				class="text-[48px] leading-tight text-center mb-[30px] max-lsm:text-[24px]">
+				Beneficios
+			</h2>
+			<div class="flex gap-[60px] max-lsm:flex-col max-lsm:px-[30px]">
+				<div
+					class="max-w-[300px] max-lg:max-w-[239px] max-md:max-w-[180px] max-lsm:max-w-[480px]">
+					<img
+						class="mb-[30px] max-lsm:mb-[15px]"
+						src="/images/benefits-money-pig.webp" />
+					<h2 class="text-[30px] font-bold mb-[16px] max-lsm:mb-[8px]">
+						+75% de propinas
+					</h2>
+					<p>
+						Con nuestro proceso de pago en línea, los clientes se animan a dejar
+						propinas, lo que resulta en un aumento significativo de las
+						recompensas para los camareros.
+					</p>
+				</div>
+				<div
+					class="max-w-[300px] max-lg:max-w-[239px] max-md:max-w-[180px] max-lsm:max-w-[480px]">
+					<img
+						class="mb-[30px] max-lsm:mb-[15px]"
+						src="/images/benefits-card.webp" />
+					<h2 class="text-[30px] font-bold mb-[16px] max-lsm:mb-[8px]">
+						+12% cheque
+					</h2>
+					<p>
+						Nuestra carta digital facilita a los clientes la exploración y
+						selección de platos, lo que resulta en un aumento mediano de suma de
+						la cuenta.
+					</p>
+				</div>
+				<div
+					class="max-w-[300px] max-lg:max-w-[239px] max-md:max-w-[180px] max-lsm:max-w-[480px]">
+					<img
+						class="mb-[30px] max-lsm:mb-[15px]"
+						src="/images/benefits-food.webp" />
+					<h2 class="text-[30px] font-bold mb-[16px] max-lsm:mb-[8px]">
+						+8% pedidos
+					</h2>
+					<p>
+						Al minimizar los tiempos de espera de la carta y la cuenta, los
+						clientes pueden pasar menos tiempo en la mesa, lo que permite a los
+						restaurantes atender a un mayor número de clientes a lo largo del
+						día.
+					</p>
+				</div>
+			</div>
+		</section>
+		<section
+			data-aos="fade-up"
+			class="bg-lavender flex flex-col items-center py-[120px]">
+			<div
+				class="max-w-[582px] flex flex-col w-full max-lg:max-w-[537px] max-lsm:max-w-[480px] max-lsm:px-[30px]">
+				<h2 class="text-[48px] max-lsm:text-[24px]">Descubra Check & Go</h2>
+				<p class="mb-[1.5rem]">
+					Rellene el formulario, nos pondremos en contacto con usted y le
+					haremos una presentación del producto.
+				</p>
+
+				<div class="flex flex-col gap-[8px] mb-[18px]">
+					<input
+						id="proposal_name"
+						class="w-full p-[12px]"
+						type="text"
+						placeholder="Nombre" />
+					<input
+						id="proposal_restaurant"
+						class="w-full p-[12px]"
+						type="text"
+						placeholder="Restaurante" />
+					<input
+						id="proposal_phone"
+						class="w-full p-[12px]"
+						type="phone"
+						placeholder="Teléfono" />
+					<input
+						id="proposal_email"
+						class="w-full p-[12px]"
+						type="email"
+						placeholder="Correo electrónico" />
+					<input
+						id="proposal_password"
+						class="w-full p-[12px] hidden"
+						type="password"
+						placeholder="Password" />
+				</div>
+				<button
+					id="send_proposal_button"
+					class="bg-[#000] text-[#fff] hover:bg-[#fff] hover:text-[#000] px-[40px] py-[12px] w-full max-w-fit transition-all duration-300 mx-auto max-lsm:max-w-full">
+					Contacto
+				</button>
+			</div>
+		</section>
+		<footer class="py-[30px]">
+			<div
+				class="grid grid-cols-3 max-w-[1080px] mx-auto justify-center max-lsm:grid-cols-1 max-lsm:max-w-[480px] max-lsm:gap-[48px] max-lsm:px-[30px]">
+				<div class="flex flex-col items-center">
+					<img
+						class="w-[100px] mb-[1.5rem]"
+						src="/images/logo.webp"
+						alt="ChecknGo Logo" />
+					<h2 class="text-[20px]">Check & Go</h2>
+				</div>
+				<div>
+					<h2 class="text-[20px] mb-[8px]">Sobre Check & Go</h2>
+					<div class="flex flex-col gap-[15px]">
+						<p>Restamatico, S.L.</p>
+						<p>NIF: B13888169</p>
+						<p>C. Lepant, 270, 08013 Barcelona</p>
+						<p>+34 936 940 116</p>
+					</div>
+				</div>
+				<div>
+					<h2 class="text-[20px] mb-[8px]">Legal</h2>
+					<div class="flex flex-col gap-[15px]">
+						<p>Términos y condiciones</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div
+			class="flex justify-center items-center pb-5 lsm:gap-[50px] max-lsm:flex-col">
+			<span>
+				<a
+					href="https://www.iubenda.com/privacy-policy/76257529"
+					class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe"
+					title="Política de Privacidad "
+					style="
+						outline: 0px;
+						border: 0px;
+						text-decoration: none;
+						display: inline-block;
+						background: none;
+						width: 116px;
+						height: 25px;
+					"
+					>Política de Privacidad</a
+				>
+				<script
+					type="text/javascript"
+					src="https://cdn.iubenda.com/iubenda_i_badge.js"></script>
+				<script type="text/javascript">
+					(function (w, d) {
+						var loader = function () {
+							var s = d.createElement("script"),
+								tag = d.getElementsByTagName("script")[0];
+							s.src = "https://cdn.iubenda.com/iubenda.js";
+							tag.parentNode.insertBefore(s, tag);
+						};
+						if (w.addEventListener) {
+							w.addEventListener("load", loader, false);
+						} else if (w.attachEvent) {
+							w.attachEvent("onload", loader);
+						} else {
+							w.onload = loader;
+						}
+					})(window, document);
+				</script>
+			</span>
+			<span>
+				<a
+					href="https://www.iubenda.com/privacy-policy/76257529/cookie-policy"
+					class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe"
+					title="Política de Cookies "
+					style="
+						outline: 0px;
+						border: 0px;
+						text-decoration: none;
+						display: inline-block;
+						background: none;
+						width: 116px;
+						height: 25px;
+					"
+					>Política de Cookies</a
+				>
+				<script
+					type="text/javascript"
+					src="https://cdn.iubenda.com/iubenda_i_badge.js"></script>
+				<script type="text/javascript">
+					(function (w, d) {
+						var loader = function () {
+							var s = d.createElement("script"),
+								tag = d.getElementsByTagName("script")[0];
+							s.src = "https://cdn.iubenda.com/iubenda.js";
+							tag.parentNode.insertBefore(s, tag);
+						};
+						if (w.addEventListener) {
+							w.addEventListener("load", loader, false);
+						} else if (w.attachEvent) {
+							w.attachEvent("onload", loader);
+						} else {
+							w.onload = loader;
+						}
+					})(window, document);
+				</script>
+			</span>
+		</div>
+		<script
+			type="module"
+			src="/main.js"></script>
+	</body>
+</html>
