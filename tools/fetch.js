@@ -1,11 +1,7 @@
 export default class HTTP {
-	static async send(url, method, body, callback) {
+	static async send(url, params, callback) {
 		const request_data = {
-			method: method,
-			headers: {
-				
-				'Authorization': `Basic ${btoa('tipsspain:checkngo1980')}`
-			},
+			...params,
 		};
 
 		if (body) {
@@ -24,6 +20,6 @@ export default class HTTP {
 	static build_url(url, params) {
 		const url_params = new URLSearchParams(params).toString();
 
-		return `${url}?${url_params}`;
+		return `https://crm.checkngo.pro${url}?${url_params}`;
 	}
 }
