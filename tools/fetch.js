@@ -4,8 +4,8 @@ export default class HTTP {
 			...params,
 		};
 
-		if (body) {
-			request_data.body = JSON.stringify(body);
+		if (params.body) {
+			request_data.body = JSON.stringify(params.body);
 		}
 
 		const response = await fetch(url, request_data);
@@ -20,6 +20,6 @@ export default class HTTP {
 	static build_url(url, params) {
 		const url_params = new URLSearchParams(params).toString();
 
-		return `https://crm.checkngo.pro${url}?${url_params}`;
+		return `https://yp-dev-crm.checkngo.pro${url}?${url_params}`;
 	}
 }
