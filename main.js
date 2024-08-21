@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	init_burger_menu();
 	init_scroll_buttons();
 	init_send_proposal_button();
+	init_terms_and_conditions();
 });
 
 function init_burger_menu() {
@@ -59,6 +60,22 @@ function init_send_proposal_button() {
 		});
 	});
 }
+
+function init_terms_and_conditions(){
+	const terms_and_conditions = document.getElementById('terms_and_conditions');
+
+	if(!terms_and_conditions) return;
+
+	terms_and_conditions.addEventListener('click', (e) => {
+		e.preventDefault();
+
+		document.querySelectorAll('section').forEach(section => {
+			section.classList.toggle('hidden');
+		})
+		
+		scroll_to_element('body');
+	});
+} 
 
 export const scroll_to_element = (id, y_offset) => {
 	y_offset ??= -102;

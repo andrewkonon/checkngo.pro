@@ -219,3 +219,21 @@
 	max-height: 300px !important;
 	transition-delay: 0s;
 }
+
+.terms-and-conditions-container ul{
+	list-style:initial;
+	margin-left: 40px;
+	margin-bottom: 15px;
+}
+
+.terms-and-conditions-container h3{
+	font-size: 20px;
+}
+
+.terms-and-conditions-container p{
+	font-size: 14px;
+}
+
+.terms-and-conditions-container p:not(ul p), .terms-and-conditions-container h3{
+	margin-bottom: 15px;
+}

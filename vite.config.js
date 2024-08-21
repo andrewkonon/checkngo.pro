@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import { globSync } from 'glob';
 
 export default defineConfig({
+  base: '/',
   build: {
     rollupOptions: {
       input: {
