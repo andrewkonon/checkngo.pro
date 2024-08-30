@@ -24,17 +24,18 @@ const replace_variables = (html, variables) => {
 };
 
 const locale_urls = (html, lang) => {
-  const regex = /href="!(.*?)"/g;
+	const regex = /href="!(.*?)"/g;
 
-  let match;
+	let match;
 
-  while ((match = regex.exec(html)) !== null) {
-    const new_url = lang === "en" ? match[1] : `/${lang.replaceAll('/', '')}${match[1]}`;
-    html = html.replaceAll(`href="!${match[1]}"`, `href="${new_url}"`);
-  }
+	while ((match = regex.exec(html)) !== null) {
+		const new_url =
+			lang === "en" ? match[1] : `/${lang.replaceAll("/", "")}${match[1]}`;
+		html = html.replaceAll(`href="!${match[1]}"`, `href="${new_url}"`);
+	}
 
-  return html;
-}
+	return html;
+};
 
 const replace_templates = (html) => {
 	const placeholders = find_all_template_placeholders(html);
@@ -62,31 +63,20 @@ const replace_templates = (html) => {
 	return html;
 };
 
+const set_assets_version = (html) => {
+	const version = new Date().getTime();
+	html = html.replaceAll("{{assets_version}}", version);
+	return html;
+}
+
 export default defineConfig({
-  base: "/",
+	base: "/",
 	plugins: [
 		{
-			name: "html-lang-replacer",
+			name: "post-build-html-lang-replacer",
 			apply: "build",
 
-			transformIndexHtml(html) {
-				const lang_dir = path.resolve(__dirname, "lang");
-				const en_file = path.join(lang_dir, "en.json");
-
-				if (fs.existsSync(en_file)) {
-					const en_data = JSON.parse(fs.readFileSync(en_file, "utf-8"));
-
-					let modified_content = replace_templates(html);
-					modified_content = replace_variables(modified_content, en_data);
-          modified_content = locale_urls(modified_content, "en");
-
-					return modified_content;
-				}
-
-				return html;
-			},
-
-			async generateBundle(_, bundle) {
+			async closeBundle() {
 				const lang_dir = path.resolve(__dirname, "lang");
 				const lang_files = fs
 					.readdirSync(lang_dir)
@@ -103,7 +93,9 @@ export default defineConfig({
 					.sync("**/*.html", { cwd: path.resolve(__dirname, "./") })
 					.filter(
 						(file) =>
-							!file.includes("node_modules") && !file.includes("templates")
+							!file.includes("node_modules") &&
+							!file.includes("templates") &&
+							!file.includes("dist")
 					);
 
 				for (const file of html_files) {
@@ -111,10 +103,10 @@ export default defineConfig({
 					let content = fs.readFileSync(file_path, "utf-8");
 
 					for (const [lang, variables] of Object.entries(lang_data)) {
-
 						let modified_content = replace_templates(content);
 						modified_content = replace_variables(modified_content, variables);
-            modified_content = locale_urls(modified_content, lang);
+						modified_content = locale_urls(modified_content, lang);
+						modified_content = set_assets_version(modified_content);
 
 						let output_dir;
 
@@ -146,4 +138,15 @@ export default defineConfig({
 			},
 		},
 	],
+	build: {
+        rollupOptions: {
+            output: {
+                dir: './dist/',
+                entryFileNames: 'main.js',
+                assetFileNames: 'main.css',
+                chunkFileNames: "chunk.js",
+                manualChunks: undefined,
+            }
+        }
+    }
 });
