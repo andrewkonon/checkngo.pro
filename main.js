@@ -56,10 +56,16 @@ function init_send_proposal_button() {
 				Object.values(inputs).forEach((input) => (input.value = ""));
 
 				const success_message_container = document.querySelector("#form_success_message_container");
+				const proposal_form_container = document.querySelector("#form_proposal_container");
 				if(!success_message_container) return;
 
 				success_message_container.classList.add("opacity-1");
-				setTimeout(() => success_message_container.classList.remove("opacity-1"), 5000);
+				proposal_form_container.add('opacity-0');
+				
+				setTimeout(() => {
+					success_message_container.classList.remove("opacity-1")
+					proposal_form_container.classList.remove("opacity-0");
+				}, 5000);
 			}
 		});
 	});
