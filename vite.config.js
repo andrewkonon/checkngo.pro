@@ -63,6 +63,7 @@ const replace_templates = (html) => {
 };
 
 export default defineConfig({
+  base: "/",
 	plugins: [
 		{
 			name: "html-lang-replacer",
