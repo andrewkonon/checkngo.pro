@@ -51,11 +51,16 @@ function init_send_proposal_button() {
 		};
 
 		const url = HTTP.build_url("/enp/mail/proposals_for_cooperation", body);
-
+		
 		HTTP.send(url, { method: "GET" }, (response) => {
 			if (response.success) {
-				alert("Your request has been sent. Thank you for contacting us!");
 				Object.values(inputs).forEach((input) => (input.value = ""));
+
+				const success_message_container = document.querySelector("#form_success_message_container");
+				if(!success_message_container) return;
+
+				success_message_container.classList.add("opacity-1");
+				setTimeout(() => success_message_container.classList.remove("opacity-1"), 5000);
 			}
 		});
 	});
