@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function init_burger_menu() {
-	document.querySelector("#burger-menu").addEventListener("click", () => {
+	document.querySelector("#burger-menu")?.addEventListener("click", () => {
 		document.querySelector("#burger-menu")?.classList.toggle("opened");
 		document.querySelector("#header")?.classList.toggle("active");
 	});
@@ -50,6 +50,18 @@ function init_send_proposal_button() {
 		};
 
 		const url = HTTP.build_url("/enp/mail/proposals_for_cooperation", body);
+
+		const success_message_container = document.querySelector("#form_success_message_container");
+		const proposal_form_container = document.querySelector("#form_proposal_container");
+		if(!success_message_container) return;
+
+		success_message_container.classList.add("opacity-1");
+		proposal_form_container.classList.add('opacity-0');
+		
+		setTimeout(() => {
+			success_message_container.classList.remove("opacity-1")
+			proposal_form_container.classList.remove("opacity-0");
+		}, 5000);
 		
 		HTTP.send(url, { method: "GET" }, (response) => {
 			if (response.success) {
