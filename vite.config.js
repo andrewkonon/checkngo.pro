@@ -73,8 +73,12 @@ export default defineConfig({
 	base: "/",
 	plugins: [
 		{
-			name: "post-build-html-lang-replacer",
+			name: "templates-substitution",
 			apply: "build",
+			
+			buildStart() {
+				this.addWatchFile(path.resolve(__dirname, "lang"));
+			},
 
 			async closeBundle() {
 				const lang_dir = path.resolve(__dirname, "lang");

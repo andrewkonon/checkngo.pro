@@ -1,21 +1,25 @@
 {
-  "name": "checkngo-pro",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.19",
-    "fs-extra": "^11.2.0",
-    "postcss": "^8.4.40",
-    "tailwindcss": "^3.4.7",
-    "vite": "^5.3.4"
-  },
-  "dependencies": {
-    "aos": "^2.3.4"
-  }
+	"name": "checkngo-pro",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"build": "vite build",
+		"preview": "vite preview",
+		"watch": "vite build --watch",
+		"serve": "browser-sync start --server 'dist' --files 'dist/**/*' --no-notify --no-open --reload-debounce 500",
+		"dev": "concurrently \"npm run watch\" \"npm run serve\""
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.19",
+		"browser-sync": "^3.0.2",
+		"concurrently": "^8.2.2",
+		"fs-extra": "^11.2.0",
+		"postcss": "^8.4.40",
+		"tailwindcss": "^3.4.7",
+		"vite": "^5.3.4"
+	},
+	"dependencies": {
+		"aos": "^2.3.4"
+	}
 }
